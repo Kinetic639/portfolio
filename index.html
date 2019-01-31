@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to my portfolio!</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    </link>
+</head>
+
+<body id="bg-img">
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="side-menu">
+
+            <div class="menu-branding">
+                <div class="portrait">
+                </div>
+            </div>
+            <nav class="navigation">
+                <ul id="menu-nav" class="menu-nav">
+                    <li class="nav-item current">
+                        <a href="./index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./about.html" class="nav-link">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./work.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="icons">
+                <a href="#!">
+                    <i class="fab fa-facebook fa-1x"></i>
+                </a>
+                <a href="#!">
+                    <i class="fab fa-linkedin fa-1x"></i>
+                </a>
+                <a href="#!">
+                    <i class="fab fa-github fa-1x"></i>
+                </a>
+            </div>
+
+            <footer class="copyright">&copy; Copyright 2019</footer>
+        </aside>
+
+        <div class="wrapper">
+            <main id="swup" class="transition-fade main-home">
+                <h1 class="lg-heading">Michał <span class="text-secondary">Stępień</span></h1>
+                <h2 class="sm-heading"> Junior Web Developer & Programmer</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta earum facilis maxime amet quam
+                    quisquam a animi saepe molestiae voluptas!</p>
+            </main>
+            <div class="transition-wipe overlay"></div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="/node_modules/swup/dist/swup.min.js"></script>
+    <script>
+        const swup = new Swup({
+            LINK_SELECTOR: 'a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[xlink\\:href]'
+        });
+    </script>
+
+</body>
+
+</html>
