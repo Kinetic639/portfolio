@@ -1,0 +1,55 @@
+html {
+    font-size: 10px;
+}
+
+.text-secondary {
+    color: $color-secondary;
+}
+
+
+body {
+    color: set-text-color($color-primary);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.1;
+}
+
+.side-menu {
+
+    a {
+        font-size: 2rem;
+        line-height: 4rem;
+    }
+}
+
+
+
+.menu-nav {
+    list-style: none;
+}
+
+//Home
+h1,
+h2,
+h3,
+p {
+    font-weight: 400;
+
+    &.lg-heading {
+        font-size: 9.6rem;
+    }
+}
+
+a {
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-secondary;
+        @include easeOut;
+    }
+}
+
+.current>a {
+    color: $color-secondary;
+}
