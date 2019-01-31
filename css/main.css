@@ -140,7 +140,8 @@ body {
   position: relative;
   border-left: 3px solid #FF8F00;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 .overlay {
   position: absolute;
@@ -155,7 +156,8 @@ body {
 header {
   position: fixed;
   z-index: 2;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 main {
   width: 85%;

@@ -24,6 +24,7 @@ body {
   border-left: 3px solid $color-secondary;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .overlay {
@@ -43,6 +44,7 @@ header {
   position: fixed;
   z-index: 2;
   width: 100%;
+  overflow: hidden;
 
 }
 
