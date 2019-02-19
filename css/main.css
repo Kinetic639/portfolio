@@ -80,7 +80,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.1; }
 
-.side-menu a {
+nav.main a {
   font-size: 2rem;
   line-height: 4rem; }
 
@@ -105,7 +105,7 @@ a {
     color: #FF8F00;
     transition: all .5s ease-out; }
 
-.current > a {
+.nav-item.current {
   color: #FF8F00; }
 
 * {
@@ -226,6 +226,41 @@ html.is-animating .transition-fade {
 html.is-animating .transition-wipe {
   transform: scaleX(1); }
 
+nav.main {
+  padding: 0 30px 30px 0; }
+
+.main ul {
+  list-style-type: none; }
+
+nav.main a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  transition: .2s;
+  border-left-color: green; }
+
+nav.main a:hover {
+  transform: translateX(20px);
+  border-left-color: green; }
+
+nav.main a.current {
+  border-left: 10px gray solid;
+  transform: translateX(0); }
+
+nav.main li:nth-child(1) a.current {
+  border-left-color: green; }
+
+nav.main li:nth-child(2) a.current {
+  border-left-color: blue; }
+
+nav.main li:nth-child(3) a.current {
+  border-left-color: orange; }
+
+nav.main li:nth-child(4) a.current {
+  border-left-color: red; }
+
 .side-menu {
   min-width: 22rem;
   padding: 5.5rem 0 0;
@@ -273,7 +308,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.1; }
 
-.side-menu a {
+nav.main a {
   font-size: 2rem;
   line-height: 4rem; }
 
@@ -298,7 +333,7 @@ a {
     color: #FF8F00;
     transition: all .5s ease-out; }
 
-.current > a {
+.nav-item.current {
   color: #FF8F00; }
 
 @media screen and (min-width: 769px) {
