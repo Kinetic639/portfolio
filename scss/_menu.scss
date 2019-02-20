@@ -1,57 +1,46 @@
-nav.main {
+.main-nav {
 
-    padding: 0 30px 30px 0;
-}
+    padding: 3rem 3rem 10vh;
+    display: flex;
+    align-items: center;
 
-.main ul {
-    list-style-type: none;
-}
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-nav.main a {
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 10px;
-    transition: .2s;
-    border-left-color: green;
-}
+    li {
 
-nav.main a:hover {
-    transform: translateX(20px);
-    border-left-color: green;
-}
+        &:not(.current):hover {
+            border-left: 10px solid $color-secondary;
+            padding-left: 15px;
+            transition: .3s;
 
-nav.main a.current {
-    border-left: 10px gray solid;
-    transform: translateX(0);
-}
+        }
+    }
 
-nav.main li:nth-child(1) a.current {
-    border-left-color: green;
-}
-
-nav.main li:nth-child(2) a.current {
-    border-left-color: blue;
-}
-
-nav.main li:nth-child(3) a.current {
-    border-left-color: orange;
-}
-
-nav.main li:nth-child(4) a.current {
-    border-left-color: red;
+    a {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 10px;
+        transition: .2s;
+        border-left-color: green;
+    }
 }
 
 // //side menu
 .side-menu {
     min-width: 22rem;
-    padding: 5.5rem 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr auto;
     background: darken(rgba($color-primary, .6), 10)
+}
+
+.menu-branding {
+    padding: 10vh 3rem 3vh;
 }
 
 .portrait {
@@ -62,10 +51,7 @@ nav.main li:nth-child(4) a.current {
     border: 3px solid $color-secondary
 }
 
-.menu-nav {
-    margin: 10vh auto;
-    padding: 0 5rem 0 0;
-}
+
 
 .copyright {
     // border: 1px solid red;

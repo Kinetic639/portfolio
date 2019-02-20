@@ -1,35 +1,6 @@
-// $color-primary: #597290;
-// $color-white: #BDFFFD;
-// $color-secondary: #F5B03E;
-
-// $color-primary: #597290;
-// $color-white: #EAFDE6;
-// $color-secondary: #BEF202;
-
-// $color-primary: #294973;
-// $color-white: #859DBF;
-// $color-secondary: #BF9754;
-
-// $color-primary: #211426;
-// $color-white: #F2EFDF;
-// $color-secondary: #9BBFAB;
-
-// $color-primary: #1B676B;
-// $color-white: #EAFDE6;
-// $color-secondary: #BEF202;
-
-// $color-primary: #79A7A8;
-// $color-white: #F0F0DF;
-// $color-secondary: #E6E863;
-
 $color-primary: #2B3A42;
 $color-white: #F0F0DF;
 $color-secondary: #FF8F00;
-
-// $color-primary: #1C3341;
-// $color-white: #F4E9C1;
-// $color-secondary: #F2C975;
-
 
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
@@ -39,12 +10,20 @@ $background-opacity: .9;
     transition: all .5s ease-out;
 }
 
+.video-background {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    overflow: hidden;
+}
+
 @mixin background {
     @if $show-home-image {
         &#bg-img {
-            background: $home-image;
-            background-attachment: fixed;
-            background-size: cover;
+            position: relative;
+            // background: $home-image;
+            // background-attachment: fixed;
+            // background-size: cover;
         }
 
         &:after {
