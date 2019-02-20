@@ -1,0 +1,56 @@
+// Widescreens
+@include mediaXl {}
+
+// Desktops & Laptops
+@include mediaLg {}
+
+@include mediaLgPlus {
+    .menu-btn {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+    .side-menu {
+        visibility: hidden;
+        display: none;
+    }
+
+    .wrapper {
+        border-color: transparent;
+    }
+
+    .icons {
+        font-size: 2.2rem;
+        margin: 3rem 0 0;
+
+
+
+        a {
+            padding: .4rem 0;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+        }
+    }
+}
+
+// Smartphones
+@include mediaSm {
+
+    h1,
+    h2,
+    h3 {
+        &.lg-heading {
+            font-size: 8rem;
+        }
+
+        &.sm-heading {
+            font-size: 2.2rem;
+        }
+    }
+}

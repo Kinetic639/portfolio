@@ -13,6 +13,9 @@
 </head>
 
 <body id="bg-img">
+        <video autoplay muted loop id="myVideo" class="video-background">
+                <source src="./img/background.mp4" type="video/mp4">
+              </video>
     <header>
         <div class="menu-btn">
             <div class="btn-line"></div>
@@ -23,24 +26,25 @@
 
     <div class="container">
         <aside class="side-menu">
-
             <div class="menu-branding">
                 <div class="portrait">
                 </div>
             </div>
-            <nav class="main">
-                <ul id="menu-nav" class="menu-nav">
-                    <li class="nav-item current">
-                        <a href="./index.html" class="nav-link">Home</a>
+
+            <nav class='main-nav'>
+
+                <ul>
+                    <li class="current">
+                        <a href="./index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./about.html" class="nav-link">About me</a>
+                    <li>
+                        <a href="./about.html">About me</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./work.html" class="nav-link">Projects</a>
+                    <li>
+                        <a href="./work.html">Projects</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./contact.html" class="nav-link">Contact</a>
+                    <li>
+                        <a href="./contact.html">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -61,11 +65,10 @@
         </aside>
 
         <div class="wrapper">
-            <main id="swup" class="transition-fade main-home">
-                <h1 class="lg-heading">Michał <span class="text-secondary">Stępień</span></h1>
-                <h2 class="sm-heading"> Junior Web Developer & Programmer</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta earum facilis maxime amet quam
-                    quisquam a animi saepe molestiae voluptas!</p>
+            <main id="swup" class="transition-fade main-home typewriter">
+                <h1 class="lg-heading animate-reveal animate-first">Michał <span class="text-secondary">Stępień</span></h1>
+                <h2 class="sm-heading animate-reveal animate-second"> Junior Web Developer & Programmer</h2>
+                <h4 class="line-1 anim-typewriter">Witaj! Zapraszam Cię do zapoznania się z moim portfolio :)</h4>
             </main>
             <div class="transition-wipe overlay"></div>
         </div>
