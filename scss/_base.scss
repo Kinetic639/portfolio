@@ -1,136 +1,214 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    @include background;
-    background-color: $color-primary;
-    margin: 0;
-    margin: 0;
-    padding: 0;
+    position: relative;
+    background-color: lighten($color: $color-primary, $amount: 20);
     overflow: hidden;
-}
-
-.container {
-    display: flex;
+    width: 100%;
     height: 100vh;
-    overflow: hidden;
+    position: fixed;
+    z-index: -999;
+
+    &::before {
+        content: '';
+        background-color: rgba($color-primary, .9);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+
+    }
+
+    &::after {
+        content: '';
+        border-right: 3px solid darken($color: $color-primary, $amount: 3);
+        background-color: $color-primary;
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        animation: slideInFromLeft .6s ease-in 0s forwards, skewToRight .3s ease-out .8s forwards;
+
+    }
+
 }
 
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    left: 25px;
+    top: 35px;
+    cursor: pointer;
 
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        background-color: #fff;
+        margin: 0 0 5px 0;
+        transition: all ease-in .3s;
+    }
+
+    &.close {
+        transform: rotate(180deg);
+    }
+
+}
 
 .wrapper {
-    width: 100%;
-    position: relative;
-    border-left: 3px solid $color-secondary;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
+    position: relative;
+    // border: 1px solid red;
 }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: $color-secondary;
-    left: 0;
-    top: 0;
-    transform: scale(0);
-    transform-origin: left;
-}
-
-
-// header
-header {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    overflow: hidden;
-
-}
-
-//main
 main {
-    width: 85%;
+    position: relative;
+    z-index: 999;
     margin: 0 auto;
+    // border: 1px solid yellowgreen;
+    width: 50%;
 
-    //border: 1px solid yellowgreen;
+    h1 {
+        margin-bottom: 5rem;
+        line-height: 100%;
 
-}
+        span {
+            display: inline-block;
+            width: 100%;
+            padding: 0;
+            margin: 0;
 
+            // border: 1px solid yellowgreen;
+            &.text-primary {
+                animation: .4s ease-in 1.1s enterLeft forwards;
+                opacity: 0;
+            }
 
-
-
-
-//home
-
-.main-home {
-    margin-top: 23vh;
-}
-
-h1,
-h2,
-h3 {
-    margin: 0;
-
-    &.lg-heading {
-        margin-bottom: 3rem;
+            &.text-secondary {
+                text-align: right;
+                animation: .4s ease-in 1.3s enterRight forwards;
+                opacity: 0;
+            }
+        }
     }
 
-    &.sm-heading {
-        margin-bottom: 4rem;
-        padding: 0.5rem 1rem;
+    h2 {
+        background-color: lighten($color: $color-primary, $amount: 5);
+        padding: .6rem;
         width: fit-content;
-        background: rgba(lighten($color-primary, 10), .4);
+        margin: 0 0 10rem auto;
+        animation: slideInFromBottom .4s ease-in 1.5s forwards, colorChange .4s ease-in 1.8s forwards;
+        opacity: 0;
+        color: transparent;
     }
 }
 
 
-//about
-.about-info {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-areas:
-        'bio-image bio bio'
-        'job-1 job-2 job-3';
-    grid-template-columns: repeat(3, 1fr);
 
-    .bio-image {
-        grid-area: bio-image;
-        margin: auto;
-        border-radius: 50%;
-        border: 3px solid $color-secondary;
 
-    }
 
-    .bio {
-        background: lighten($color-primary, 5);
-        padding: .5rem;
-        grid-area: bio;
-        font-size: 1.5rem;
-    }
 
-    .job-1 {
-        grid-area: job-1;
-    }
+// // header
+// header {
+//     position: fixed;
+//     z-index: 2;
+//     width: 100%;
+//     overflow: hidden;
 
-    .job-2 {
-        grid-area: job-2;
-    }
+// }
 
-    .job-3 {
-        grid-area: job-3;
-    }
+// //main
+// main {
+//     width: 85%;
+//     margin: 0 auto;
 
-    .job {
-        background: lighten($color-primary, 5);
-        padding: .5rem;
-        border-bottom: 5px solid $color-secondary;
-    }
-}
+//     //border: 1px solid yellowgreen;
 
-//Contact
+// }
 
-.main-contact {
-    margin-top: 23vh;
-}
+
+
+
+
+// //home
+
+// .main-home {
+//     margin-top: 23vh;
+// }
+
+// h1,
+// h2,
+// h3 {
+//     margin: 0;
+
+//     &.lg-heading {
+//         margin-bottom: 3rem;
+//     }
+
+//     &.sm-heading {
+//         margin-bottom: 4rem;
+//         padding: 0.5rem 1rem;
+//         width: fit-content;
+//         background: rgba(lighten($color-primary, 10), .4);
+//     }
+// }
+
+
+// //about
+// .about-info {
+//     display: grid;
+//     grid-gap: 30px;
+//     grid-template-areas:
+//         'bio-image bio bio'
+//         'job-1 job-2 job-3';
+//     grid-template-columns: repeat(3, 1fr);
+
+//     .bio-image {
+//         grid-area: bio-image;
+//         margin: auto;
+//         border-radius: 50%;
+//         border: 3px solid $color-secondary;
+
+//     }
+
+//     .bio {
+//         background: lighten($color-primary, 5);
+//         padding: .5rem;
+//         grid-area: bio;
+//         font-size: 1.5rem;
+//     }
+
+//     .job-1 {
+//         grid-area: job-1;
+//     }
+
+//     .job-2 {
+//         grid-area: job-2;
+//     }
+
+//     .job-3 {
+//         grid-area: job-3;
+//     }
+
+//     .job {
+//         background: lighten($color-primary, 5);
+//         padding: .5rem;
+//         border-bottom: 5px solid $color-secondary;
+//     }
+// }
+
+// //Contact
+
+// .main-contact {
+//     margin-top: 23vh;
+// }

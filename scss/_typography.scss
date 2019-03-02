@@ -1,7 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+// @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
 html {
     font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: $color-white;
 }
 
 .text-secondary {
@@ -9,139 +12,163 @@ html {
 }
 
 
-body {
-    color: set-text-color($color-primary);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.1;
-}
-
-nav.main {
-
-    a {
-        font-size: 2rem;
-        line-height: 4rem;
-    }
-}
-
-
-
-.menu-nav {
-    list-style: none;
-}
-
-//Home
-h1,
-h2,
-h3,
-p {
-    font-weight: 400;
-
-    &.lg-heading {
-        font-size: 9.6rem;
-    }
-}
-
-a {
-    color: $color-white;
-    text-decoration: none;
-
-    &:hover {
-        color: $color-secondary;
-        @include easeOut;
-    }
-}
-
-.nav-item.current {
-    color: $color-secondary;
-}
-
-li.current a {
-    color: $color-secondary;
-}
-
-
-
-
-
-
-
-
-
-
-.line-1 {
-    font-family: 'Courier New', monospace;
-    font-weight: 300;
-    width: 23em;
-    margin: 0;
-    color: rgba(255, 255, 255, .75);
-    border-right: 2px solid rgba($color-secondary, .75);
-    font-size: 140%;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-}
-
-/* Animation */
-.anim-typewriter {
-    animation: typewriter 4s steps(57) 1.5s 1 normal both,
-        blinkTextCursor 500ms steps(44) 1s infinite normal;
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 35.2em;
-    }
-}
-
-@keyframes blinkTextCursor {
-    from {
-        border-right-color: rgba($color-secondary, 0.75);
-    }
-
-    to {
-        border-right-color: transparent;
-    }
-}
-
-
-.animate-reveal {
-    font: bold 1.5em sans-serif;
+h1 {
+    font-size: 8rem;
+    font-weight: inherit;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0;
-    -webkit-animation: reveal 1s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
-    -moz-animation: reveal 1s ease-in 1 normal forwards;
-    -o-animation: reveal 1s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
-    animation: reveal 1s .7s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+    letter-spacing: 7px;
 }
 
-.animate-second {
-    -webkit-animation-delay: 1.2s;
-    -moz-animation-delay: 1.2s;
-    -o-animation-delay: 1.2s;
-    animation-delay: 1.2s;
+h2 {
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-weight: 300;
 }
 
-
-@-webkit-keyframes reveal {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(100%);
-        -moz-transform: translateY(100%);
-        -o-transform: translateY(100%);
-        transform: translateY(100%);
-    }
-
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0);
-    }
+.typewritter {
+    background-color: $color-secondary;
+    color: #000;
+    font-weight: 400;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: .3rem;
+    width: fit-content;
+    margin: 0 auto;
 }
+
+// nav.main {
+
+//     a {
+//         font-size: 2rem;
+//         line-height: 4rem;
+//     }
+// }
+
+
+
+// .menu-nav {
+//     list-style: none;
+// }
+
+// //Home
+// h1,
+// h2,
+// h3,
+// p {
+//     font-weight: 400;
+
+//     &.lg-heading {
+//         font-size: 9.6rem;
+//     }
+// }
+
+// a {
+//     color: $color-white;
+//     text-decoration: none;
+
+//     &:hover {
+//         color: $color-secondary;
+//         @include easeOut;
+//     }
+// }
+
+// .nav-item.current {
+//     color: $color-secondary;
+// }
+
+// li.current a {
+//     color: $color-secondary;
+// }
+
+
+
+
+
+
+
+
+
+
+// .line-1 {
+//     font-family: 'Courier New', monospace;
+//     font-weight: 300;
+//     width: 23em;
+//     margin: 0;
+//     color: rgba(255, 255, 255, .75);
+//     border-right: 2px solid rgba($color-secondary, .75);
+//     font-size: 140%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     transform: translateY(-50%);
+// }
+
+// /* Animation */
+// .anim-typewriter {
+//     animation: typewriter 4s steps(57) 1.5s 1 normal both,
+//         blinkTextCursor 500ms steps(44) 1s infinite normal;
+// }
+
+// @keyframes typewriter {
+//     from {
+//         width: 0;
+//     }
+
+//     to {
+//         width: 35.2em;
+//     }
+// }
+
+// @keyframes blinkTextCursor {
+//     from {
+//         border-right-color: rgba($color-secondary, 0.75);
+//     }
+
+//     to {
+//         border-right-color: transparent;
+//     }
+// }
+
+
+// .animate-reveal {
+//     text-transform: uppercase;
+//     letter-spacing: 2px;
+//     opacity: 0;
+//     -webkit-animation: reveal 1s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+//     -moz-animation: reveal 1s ease-in 1 normal forwards;
+//     -o-animation: reveal 1s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+//     animation: reveal 1s .7s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+// }
+
+// .animate-second {
+//     -webkit-animation-delay: 1.2s;
+//     -moz-animation-delay: 1.2s;
+//     -o-animation-delay: 1.2s;
+//     animation-delay: 1.2s;
+// }
+
+// .animate-third {
+//     -webkit-animation-delay: 2.6s;
+//     -moz-animation-delay: 2.6s;
+//     -o-animation-delay: 2.6s;
+//     animation-delay: 2.6s;
+// }
+
+
+// @-webkit-keyframes reveal {
+//     0% {
+//         opacity: 0;
+//         -webkit-transform: translateY(100%);
+//         -moz-transform: translateY(100%);
+//         -o-transform: translateY(100%);
+//         transform: translateY(100%);
+//     }
+
+//     100% {
+//         opacity: 1;
+//         -webkit-transform: translateY(0);
+//         -moz-transform: translateY(0);
+//         -o-transform: translateY(0);
+//         transform: translateY(0);
+//     }
+// }

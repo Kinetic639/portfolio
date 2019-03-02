@@ -1,56 +1,155 @@
 // Widescreens
-@include mediaXl {}
+@include mediaXl {
+    body {
 
-// Desktops & Laptops
-@include mediaLg {}
+        padding-left: 80px;
+    }
 
-@include mediaLgPlus {
     .menu-btn {
         visibility: hidden;
-        display: none;
-    }
-}
-
-// Tablets & Small Laptops
-@include mediaMd {
-    .side-menu {
-        visibility: hidden;
-        display: none;
+        opacity: 0;
     }
 
-    .wrapper {
-        border-color: transparent;
-    }
+    nav {
+        visibility: visible;
+        box-sizing: content-box;
+        position: absolute;
+        top: 0;
+        left: -80px;
+        height: 100vh;
+        background-color: #1E282D;
+        width: 80px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: width .2s, border-right .3s .2s;
+        animation: showMenu .2s ease-in 0s forwards;
+        transform-origin: 0% 100%;
 
-    .icons {
-        font-size: 2.2rem;
-        margin: 3rem 0 0;
 
-
+        ul {
+            list-style: none;
+        }
 
         a {
-            padding: .4rem 0;
+            display: block;
+            line-height: 70px;
+            font-size: 22px;
+            text-decoration: none;
+            color: $color-white;
+            width: 230px;
+            transition: .2s;
 
-            &:not(:last-child) {
-                margin-right: 2rem;
+            i {
+                width: 80px;
+                text-align: center;
+                transition: margin-right .2s;
+
             }
 
+            span {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &.active {
+                color: $color-secondary;
+            }
+
+            &:hover {
+                color: $color-secondary;
+
+                i {
+                    margin-right: 30px;
+                }
+            }
+        }
+
+
+    }
+
+    nav:hover {
+        width: 230px;
+        border-right: 3px solid $color-secondary;
+
+        span {
+            visibility: visible;
+            opacity: 1;
         }
     }
 }
+
+
+
+
+
+
+// Desktops & Laptops
+@include mediaLg {
+    main {
+        width: 75%;
+
+        h2 {
+            font-size: 2.1rem;
+        }
+
+
+        h4 {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+
+// Tablets & Small Laptops
+@include mediaMd {
+
+    body {
+
+        &::after {
+            animation: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50vh;
+            border-right: none;
+
+            // border-bottom: 3px solid darken($color: $color-primary, $amount: 3);
+        }
+
+    }
+
+    main {
+        width: 85%;
+
+
+
+        h1 {
+            padding: 0 1rem;
+            font-size: 6rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+        }
+    }
+}
+
 
 // Smartphones
 @include mediaSm {
 
-    h1,
-    h2,
-    h3 {
-        &.lg-heading {
-            font-size: 8rem;
+    main {
+        width: 100%;
+
+        h1 {
+            padding: 0 1rem;
         }
 
-        &.sm-heading {
-            font-size: 2.2rem;
-        }
     }
 }

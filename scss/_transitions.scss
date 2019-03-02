@@ -1,18 +1,89 @@
-.transition-fade {
-    transition: 0.7s;
-    opacity: 1;
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-html.is-animating .transition-fade {
-    opacity: 0;
-    transform: translateY(-50px);
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-.transition-wipe {
-    transition: .5s;
-    transform: scaleX(0);
+@keyframes skewToRight {
+    0% {
+        -webkit-transform: skew(0deg, 0deg);
+        -ms-transform: skew(0deg, 0deg);
+        -o-transform: skew(0deg, 0deg);
+        transform: skew(0deg, 0deg);
+    }
+
+    100% {
+
+        -webkit-transform: skew(-35deg, 0deg);
+        -ms-transform: skew(-35deg, 0deg);
+        -o-transform: skew(-35deg, 0deg);
+        transform: skew(-35deg, 0deg);
+    }
 }
 
-html.is-animating .transition-wipe {
-    transform: scaleX(1);
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes colorChange {
+    0% {}
+
+    100% {
+        color: $color-white;
+    }
+}
+
+@keyframes enterLeft {
+    0% {
+        transform: translateX(-30px);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes enterRight {
+    0% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
 }
