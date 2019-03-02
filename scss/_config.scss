@@ -7,10 +7,14 @@ $home-image: url(../img/background.jpg);
 $background-opacity: .9;
 
 .video-background {
-    position: absolute;
+    position: fixed;
+    bottom: 0;
+    right: -150px;
     z-index: -999;
     opacity: 0;
     animation: 1s ease-in 0s slideInFromRight forwards;
+    background-size: cover;
+    background-position: center
 }
 
 

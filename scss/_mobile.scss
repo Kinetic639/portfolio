@@ -105,6 +105,11 @@
 // Tablets & Small Laptops
 @include mediaMd {
 
+    .video-background {
+        height: 50%;
+        width: auto
+    }
+
     body {
 
         &::after {
@@ -114,8 +119,8 @@
             width: 100%;
             height: 50vh;
             border-right: none;
-
-            // border-bottom: 3px solid darken($color: $color-primary, $amount: 3);
+            animation: slideInFromTop .6s ease-in 0s forwards;
+            border-bottom: 3px solid darken($color: $color-primary, $amount: 3);
         }
 
     }

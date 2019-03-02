@@ -1,8 +1,12 @@
 .video-background {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
+  right: -150px;
   z-index: -999;
   opacity: 0;
-  animation: 1s ease-in 0s slideInFromRight forwards; }
+  animation: 1s ease-in 0s slideInFromRight forwards;
+  background-size: cover;
+  background-position: center; }
 
 html {
   font-size: 10px;
@@ -153,6 +157,12 @@ main {
     transform: translateY(0);
     opacity: 1; } }
 
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0); } }
+
 @keyframes colorChange {
   0% { }
   100% {
@@ -243,13 +253,18 @@ nav {
       font-size: 1.6rem; } }
 
 @media screen and (max-width: 620px) {
+  .video-background {
+    height: 50%;
+    width: auto; }
   body::after {
     animation: none;
     top: 0;
     left: 0;
     width: 100%;
     height: 50vh;
-    border-right: none; }
+    border-right: none;
+    animation: slideInFromTop .6s ease-in 0s forwards;
+    border-bottom: 3px solid #253239; }
   main {
     width: 85%; }
     main h1 {
