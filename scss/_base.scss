@@ -41,26 +41,7 @@ body {
 
 }
 
-.menu-btn {
-    position: absolute;
-    z-index: 3;
-    left: 25px;
-    top: 35px;
-    cursor: pointer;
 
-    .btn-line {
-        width: 28px;
-        height: 3px;
-        background-color: #fff;
-        margin: 0 0 5px 0;
-        transition: all ease-in .3s;
-    }
-
-    &.close {
-        transform: rotate(180deg);
-    }
-
-}
 
 .wrapper {
     height: 100vh;
@@ -73,7 +54,7 @@ body {
 
 main {
     position: relative;
-    z-index: 999;
+    z-index: 3;
     margin: 0 auto;
     // border: 1px solid yellowgreen;
     width: 50%;
