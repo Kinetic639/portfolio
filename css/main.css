@@ -228,9 +228,9 @@ main {
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
-      width: 250px;
-      height: 250px;
-      background: url("../img/portrait.jpg");
+      width: 150px;
+      height: 150px;
+      background: url("../img/portrait_small.jpg");
       border-radius: 50%;
       border: 3px solid #FF8F00; }
   .menu .nav-item {
@@ -259,65 +259,70 @@ main {
     background-color: #fff;
     transition: all ease-in .2s; }
     .menu-btn .btn-line:nth-child(1), .menu-btn .btn-line:nth-child(3) {
-      width: 28px; }
+      width: 34px; }
     .menu-btn .btn-line:nth-child(2) {
-      width: 24px; }
+      width: 30px; }
     .menu-btn .btn-line:not(:last-child) {
-      margin: 0 0 5px 0; }
+      margin: 0 0 8px 0; }
   .menu-btn.close .btn-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px); }
+    transform: rotate(45deg) translate(4px, 7px); }
   .menu-btn.close .btn-line:nth-child(2) {
     width: 0; }
   .menu-btn.close .btn-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px); }
+    transform: rotate(-45deg) translate(8px, -11px); }
 
 @media screen and (min-width: 1081px) {
   body {
     padding-left: 80px; }
   .menu {
+    left: 0;
     box-sizing: content-box;
-    position: absolute;
-    top: 0;
-    left: -80px;
-    height: 100vh;
-    background-color: #1E282D;
-    width: 80px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: width .2s, border-right .3s .2s;
-    animation: showMenu .2s ease-in 0s forwards;
-    transform-origin: 0% 100%; }
-    .menu ul {
-      list-style: none; }
-    .menu a {
-      display: block;
-      line-height: 70px;
-      font-size: 22px;
-      text-decoration: none;
-      color: #F0F0DF;
-      width: 230px;
-      transition: .2s; }
-      .menu a i {
-        width: 80px;
-        text-align: center;
-        transition: margin-right .2s; }
-      .menu a span {
+    visibility: visible;
+    width: 160px;
+    transition: width .2s, border-right .3s .2s; }
+    .menu-branding {
+      height: 30vh;
+      transform: translate3d(0, 0, 0);
+      background-color: #1E282D; }
+      .menu-branding .portrait {
+        width: 150px;
+        height: 150px;
         visibility: hidden;
+        transition: .3s ease-in .2s;
         opacity: 0; }
-      .menu a.active {
-        color: #FF8F00; }
-      .menu a:hover {
-        color: #FF8F00; }
-        .menu a:hover i {
-          margin-right: 30px; }
-  .menu:hover {
-    width: 230px;
-    border-right: 3px solid #FF8F00; }
-    .menu:hover span {
+    .menu-nav {
+      height: 70vh;
+      transform: translate3d(0, 0, 0);
+      background-color: #1E282D; }
+    .menu .nav-item {
       visibility: visible;
-      opacity: 1; } }
+      transform: translate3d(0, 0, 0); }
+    .menu span {
+      opacity: 0; }
+    .menu:hover {
+      width: 250px;
+      border-right: 3px solid #FF8F00; }
+      .menu:hover span {
+        visibility: visible;
+        opacity: 1; }
+      .menu:hover ul.menu-nav,
+      .menu:hover div.menu-branding {
+        width: 100%;
+        transition: none; }
+        .menu:hover ul.menu-nav .portrait,
+        .menu:hover div.menu-branding .portrait {
+          background: url("../img/portrait_small.jpg");
+          visibility: visible;
+          opacity: 1; }
+    .menu-btn {
+      visibility: hidden; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); } }
 
 @media screen and (max-width: 1080px) {
   main {
@@ -357,8 +362,26 @@ main {
     main h4 {
       font-size: 1.4rem; } }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 540px) {
   main {
     width: 100%; }
     main h1 {
-      padding: 0 1rem; } }
+      padding: 0 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portrait_small.jpg");
+      width: 150px;
+      height: 150px; }
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0); } }

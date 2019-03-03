@@ -99,9 +99,9 @@
         }
 
         .portrait {
-            width: 250px;
-            height: 250px;
-            background: url('../img/portrait.jpg');
+            width: 150px;
+            height: 150px;
+            background: url('../img/portrait_small.jpg');
             border-radius: 50%;
             border: 3px solid $color-secondary;
         }
@@ -141,16 +141,16 @@
 
         &:nth-child(1),
         &:nth-child(3) {
-            width: 28px;
+            width: 34px;
         }
 
         &:nth-child(2) {
-            width: 24px;
+            width: 30px;
 
         }
 
         &:not(:last-child) {
-            margin: 0 0 5px 0;
+            margin: 0 0 8px 0;
 
         }
     }
@@ -162,7 +162,7 @@
 
             //line 1
             &:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
+                transform: rotate(45deg) translate(4px, 7px);
             }
 
             //line 2
@@ -172,7 +172,7 @@
 
             //line 3
             &:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
+                transform: rotate(-45deg) translate(8px, -11px);
             }
         }
     }

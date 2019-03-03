@@ -31,7 +31,7 @@ $background-opacity: .7;
 }
 
 @mixin mediaSm {
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 540px) {
         @content;
     }
 }
