@@ -179,6 +179,7 @@ main {
   width: 100%;
   opacity: .95;
   visibility: hidden;
+  background-color: #1E282D;
   z-index: 5; }
   .menu.show {
     visibility: visible; }
@@ -186,6 +187,12 @@ main {
     list-style: none; }
   .menu li {
     width: 200px; }
+  .menu-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .menu-contact .nav-link span {
+      font-size: 1.6rem; }
   .menu .nav-link {
     line-height: 70px;
     font-size: 22px;
@@ -210,9 +217,9 @@ main {
     align-items: center;
     justify-content: center;
     float: left;
-    height: 100vh;
     overflow: hidden;
-    width: 50%; }
+    width: 50%;
+    height: 100vh; }
   .menu-nav {
     margin: 0;
     padding: 0;
@@ -233,11 +240,6 @@ main {
       background: url("../img/portrait_small.jpg");
       border-radius: 50%;
       border: 3px solid #FF8F00; }
-  .menu .nav-item {
-    transform: translate3d(600px, 0, 0);
-    transition: all 0.5s ease-out; }
-    .menu .nav-item.show {
-      transform: translate3d(0, 0, 0); }
   .menu .nav-item:nth-child(1) {
     transition-delay: 0.2s; }
   .menu .nav-item:nth-child(2) {
@@ -246,6 +248,19 @@ main {
     transition-delay: 0.4s; }
   .menu .nav-item:nth-child(4) {
     transition-delay: 0.5s; }
+  .menu footer {
+    display: inline-block;
+    text-align: left;
+    width: 200px;
+    color: #F0F0DF;
+    background-color: #171f23;
+    transition: .3s;
+    padding: .7rem 0;
+    font-size: 1.6rem; }
+    .menu footer i {
+      width: 80px;
+      text-align: center;
+      transition: .2s; }
 
 .menu-btn {
   position: absolute;
@@ -275,11 +290,16 @@ main {
   body {
     padding-left: 80px; }
   .menu {
+    top: 0;
     left: 0;
     box-sizing: content-box;
     visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 80px;
-    border-right: 3px solid #1E282D;
+    height: 100vh;
+    overflow: hidden;
     transition: width .3s, border-right .3s .2s; }
     .menu-branding {
       width: 100%;
@@ -294,15 +314,16 @@ main {
         opacity: 0; }
     .menu-nav {
       width: 100%;
-      height: 70vh;
-      justify-content: flex-start;
+      height: auto;
       transform: translate3d(0, 0, 0);
       background-color: #1E282D; }
     .menu .nav-item {
       visibility: visible;
       transform: translate3d(0, 0, 0); }
     .menu span {
-      opacity: 0; }
+      opacity: 0;
+      visibility: hidden;
+      transition: .5s; }
     .menu:hover {
       width: 250px;
       border-right: 3px solid #FF8F00; }
@@ -313,6 +334,10 @@ main {
         background: url("../img/portrait_small.jpg");
         visibility: visible;
         opacity: 1; }
+      .menu:hover footer {
+        width: 250px; }
+        .menu:hover footer i {
+          width: 40px; }
     .menu-btn {
       visibility: hidden; }
   ul.menu-nav,

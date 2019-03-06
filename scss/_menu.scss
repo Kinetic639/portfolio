@@ -5,7 +5,7 @@
     width: 100%;
     opacity: .95;
     visibility: hidden;
-    // height: 100vh;
+    background-color: #1E282D;
     // background-color: #1E282D;
     // width: 100%;
     // overflow: hidden;
@@ -25,6 +25,19 @@
 
     li {
         width: 200px;
+    }
+
+    &-contact {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .nav-link {
+            span {
+
+                font-size: 1.6rem;
+            }
+        }
     }
 
     .nav-link {
@@ -70,11 +83,14 @@
         align-items: center;
         justify-content: center;
         float: left;
-        height: 100vh;
         overflow: hidden;
         width: 50%;
+        height: 100vh;
+
 
     }
+
+
 
     &-nav {
         margin: 0;
@@ -107,14 +123,16 @@
         }
     }
 
-    .nav-item {
-        transform: translate3d(600px, 0, 0);
-        @include easeOut;
 
-        &.show {
-            transform: translate3d(0, 0, 0);
-        }
-    }
+
+    // .nav-item {
+    //     transform: translate3d(600px, 0, 0);
+    //     @include easeOut;
+
+    //     &.show {
+    //         transform: translate3d(0, 0, 0);
+    //     }
+    // }
 
     //delay
     @for $x from 1 through 4 {
@@ -122,7 +140,28 @@
             transition-delay: .1s + ($x * .1s);
         }
     }
+
+    footer {
+        display: inline-block;
+        text-align: left;
+        width: 200px;
+        color: $color-white;
+        background-color: darken($color: $color-primary, $amount: 10);
+        transition: .3s;
+        padding: .7rem 0;
+        font-size: 1.6rem;
+
+
+        i {
+            width: 80px;
+            text-align: center;
+            transition: .2s;
+        }
+
+    }
 }
+
+
 
 .menu-btn {
     position: absolute;
