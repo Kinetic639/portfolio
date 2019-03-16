@@ -1,42 +1,107 @@
 .menu {
-    // visibility: hidden;
-    position: fixed;
+    position: absolute;
+    box-sizing: border-box;
     top: 0;
+    left: 0;
+    min-height: 100vh;
     width: 100%;
+    display: flex;
     opacity: .95;
+    flex-direction: column;
     visibility: hidden;
-    background-color: #1E282D;
-    // background-color: #1E282D;
-    // width: 100%;
-    // overflow: hidden;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
     z-index: 5;
+    @include easeOut;
 
     &.show {
+
         visibility: visible;
+        background-color: #1E282D;
     }
 
+    &-branding,
+    &-nav {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+
+    }
+
+    &-wrapper {
+        display: flex;
+        width: 100%;
+        flex-grow: 2;
+    }
+
+
+
+    &-branding {
+        background: $color-primary;
+        transform: translate3d(-100%, 0, 0);
+
+        align-items: center;
+
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .portrait {
+            width: 150px;
+            height: 150px;
+            background: url('../img/portrait_small.jpg');
+            border-radius: 50%;
+            border: 3px solid $color-secondary;
+        }
+    }
+
+    &-nav {
+        transform: translate3d(100%, 0, 0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+    }
 
     ul {
         list-style: none;
     }
 
-    li {
-        width: 200px;
+    &-social {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+        background-color: darken($color: $color-primary, $amount: 2);
+        border-top: 2px solid darken($color: $color-primary, $amount: 10);
+        border-bottom: 2px solid darken($color: $color-primary, $amount: 10);
+
+        transform: translate3d(0, 130%, 0);
+
+
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
     }
 
-    &-contact {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    & footer {
+        line-height: 5rem;
+        text-align: center;
+        font-size: 1.3rem;
+        background-color: darken($color: $color-primary, $amount: 12);
 
-        .nav-link {
-            span {
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
 
-                font-size: 1.6rem;
-            }
+        &.show {
+            transform: translate3d(0, 0, 0);
         }
     }
 
@@ -47,6 +112,7 @@
         color: $color-white;
         width: 100%;
         display: inline-block;
+        padding-left: 2rem;
         @include easeOut;
 
         i {
@@ -73,93 +139,142 @@
             }
         }
     }
-
-
-
-    &-branding,
-    &-nav {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-        float: left;
-        overflow: hidden;
-        width: 50%;
-        height: 100vh;
-
-
-    }
-
-
-
-    &-nav {
-        margin: 0;
-        padding: 0;
-        background-color: darken($color: $color-primary, $amount: 5);
-        transform: translate3d(0, -100%, 0);
-        @include easeOut;
-
-        &.show {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-    &-branding {
-        background: $color-primary;
-        transform: translate3d(0, 100%, 0);
-
-        @include easeOut;
-
-        &.show {
-            transform: translate3d(0, 0, 0);
-        }
-
-        .portrait {
-            width: 150px;
-            height: 150px;
-            background: url('../img/portrait_small.jpg');
-            border-radius: 50%;
-            border: 3px solid $color-secondary;
-        }
-    }
-
-
-
-    // .nav-item {
-    //     transform: translate3d(600px, 0, 0);
-    //     @include easeOut;
-
-    //     &.show {
-    //         transform: translate3d(0, 0, 0);
-    //     }
-    // }
-
-    //delay
-    @for $x from 1 through 4 {
-        .nav-item:nth-child(#{$x}) {
-            transition-delay: .1s + ($x * .1s);
-        }
-    }
-
-    footer {
-        display: inline-block;
-        text-align: left;
-        width: 200px;
-        color: $color-white;
-        background-color: darken($color: $color-primary, $amount: 10);
-        transition: .3s;
-        padding: .7rem 0;
-        font-size: 1.6rem;
-
-
-        i {
-            width: 80px;
-            text-align: center;
-            transition: .2s;
-        }
-
-    }
 }
+
+//     &.show {
+//         visibility: visible;
+//     }
+
+
+//     ul {
+//         list-style: none;
+//     }
+
+//     li {
+//         width: 200px;
+//     }
+
+//     &-contact {
+//         display: flex;
+//         align-items: center;
+//         flex-direction: column;
+
+//         .nav-link {
+//             span {
+
+//                 font-size: 1.6rem;
+//             }
+//         }
+//     }
+
+//     .nav-link {
+//         line-height: 70px;
+//         font-size: 22px;
+//         text-decoration: none;
+//         color: $color-white;
+//         width: 100%;
+//         display: inline-block;
+//         @include easeOut;
+
+//         i {
+//             width: 80px;
+//             text-align: center;
+//             transition: margin-right .2s;
+
+//         }
+
+//         // span {
+//         //     visibility: hidden;
+//         //     opacity: 0;
+//         // }
+
+//         &.active {
+//             color: $color-secondary;
+//         }
+
+//         &:hover {
+//             color: $color-secondary;
+
+//             i {
+//                 margin-right: 30px;
+//             }
+//         }
+//     }
+
+
+
+//     &-branding,
+//     &-nav {
+//         display: flex;
+//         flex-flow: column wrap;
+//         align-items: center;
+//         justify-content: center;
+//         float: left;
+//         overflow: hidden;
+//         width: 50%;
+//         height: 100vh;
+
+
+//     }
+
+
+
+//     &-nav {
+//         margin: 0;
+//         padding: 0;
+//         background-color: darken($color: $color-primary, $amount: 5);
+//         transform: translate3d(0, -100%, 0);
+//         @include easeOut;
+
+//         &.show {
+//             transform: translate3d(0, 0, 0);
+//         }
+//     }
+
+//     &-branding {
+//         background: $color-primary;
+//         transform: translate3d(0, 100%, 0);
+
+//         @include easeOut;
+
+//         &.show {
+//             transform: translate3d(0, 0, 0);
+//         }
+
+//         .portrait {
+//             width: 150px;
+//             height: 150px;
+//             background: url('../img/portrait_small.jpg');
+//             border-radius: 50%;
+//             border: 3px solid $color-secondary;
+//         }
+//     }
+
+//     @for $x from 1 through 4 {
+//         .nav-item:nth-child(#{$x}) {
+//             transition-delay: .1s + ($x * .1s);
+//         }
+//     }
+
+//     footer {
+//         display: inline-block;
+//         text-align: left;
+//         width: 200px;
+//         color: $color-white;
+//         background-color: darken($color: $color-primary, $amount: 10);
+//         transition: .3s;
+//         padding: .7rem 0;
+//         font-size: 1.6rem;
+
+
+//         i {
+//             width: 80px;
+//             text-align: center;
+//             transition: .2s;
+//         }
+
+//     }
+// }
 
 
 
@@ -169,8 +284,6 @@
     left: 25px;
     top: 25px;
     cursor: pointer;
-    // visibility: hidden;
-    // opacity: 0;
     transition: all ease-in .3s;
 
     .btn-line {
@@ -195,23 +308,19 @@
     }
 
     &.close {
-        // transform: rotate(180deg);
 
         .btn-line {
 
-            //line 1
             &:nth-child(1) {
-                transform: rotate(45deg) translate(4px, 7px);
+                transform: rotate(135deg) translate(9px, -7px);
             }
 
-            //line 2
             &:nth-child(2) {
                 width: 0;
             }
 
-            //line 3
             &:nth-child(3) {
-                transform: rotate(-45deg) translate(8px, -11px);
+                transform: rotate(-135deg) translate(8px, 7px);
             }
         }
     }

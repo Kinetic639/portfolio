@@ -6,7 +6,7 @@
 
     .menu {
         top: 0;
-        left: 0;
+        left: -80px;
         box-sizing: content-box;
         visibility: visible;
         display: flex;
@@ -15,8 +15,13 @@
         width: 80px;
         height: 100vh;
         overflow: hidden;
+        border-right: 2px solid darken($color: $color-primary, $amount: 10);
 
         transition: width .3s, border-right .3s .2s;
+
+        &-wrapper {
+            flex-direction: column;
+        }
 
         &-branding {
             width: 100%;
@@ -39,6 +44,19 @@
             transform: translate3d(0, 0, 0);
             background-color: #1E282D;
 
+            li {
+                width: 300px;
+            }
+
+        }
+
+        .menu-social {
+            height: 30vh;
+
+            li.nav-item {
+                width: 300px;
+                font-size: .5rem;
+            }
         }
 
         .nav-item {
@@ -46,11 +64,34 @@
             transform: translate3d(0, 0, 0);
         }
 
+        .nav-link {
+
+            padding-left: 0;
+        }
+
         span {
             opacity: 0;
             visibility: hidden;
 
             transition: .5s;
+        }
+
+        footer {
+            box-sizing: border-box;
+            width: 280px;
+            text-align: left;
+
+            i {
+                width: 80px;
+                visibility: visible;
+                text-align: center;
+                @include easeOut;
+            }
+
+            span {
+                opacity: 0;
+                visibility: hidden;
+            }
         }
 
 
@@ -74,12 +115,18 @@
             }
 
             footer {
-                width: 250px;
-
                 i {
                     width: 40px;
+                    visibility: visible;
+                }
+
+                span {
+                    visibility: visible;
+                    opacity: 1;
                 }
             }
+
+
         }
 
         &-btn {
@@ -206,9 +253,7 @@
 
     ul.menu-nav,
     div.menu-branding {
-        float: none;
         width: 100%;
-        min-height: 0;
 
         &.show {
             transform: translate3d(0, 0, 0)
@@ -216,7 +261,6 @@
     }
 
     .menu-branding {
-        height: 30vh;
         transform: translate3d(100%, 0, 0);
 
         .portrait {
@@ -227,8 +271,11 @@
     }
 
     .menu-nav {
-        height: 70vh;
         transform: translate3d(-100%, 0, 0);
 
+    }
+
+    .menu-wrapper {
+        flex-direction: column;
     }
 }
